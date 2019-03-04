@@ -21,25 +21,30 @@ addParameters({
 
 storiesOf('Demo|Example Element', module)
   .addDecorator(withKnobs)
-  .add(
-    'Documentation',
-    () =>
-      withClassPropertiesKnobs(MyEl, {
-        overrides: el => [
-          { key: 'headerColor', fn: () => color('headerColor', el.headerColor, 'Element') },
-          {
-            key: 'type',
-            fn: () => select('type', ['small', 'medium', 'large'], el.type, 'Element'),
-          },
-          { key: 'complexItems', fn: () => object('complexItems', el.complexItems, 'Inherited') },
-          { key: 'locked', group: 'Security' },
-        ],
-        template: html`
-          <my-el><p>foo</p></my-el>
-        `,
-      }),
-    { notes: { markdown: notes } },
-  )
+  // .add(
+  //   'Documentation',
+  //   () =>
+  //     withClassPropertiesKnobs(MyEl, {
+  //       overrides: el => [
+  //         { key: 'headerColor', fn: () => color('headerColor', el.headerColor, 'Element') },
+  //         {
+  //           key: 'type',
+  //           fn: () => select('type', ['small', 'medium', 'large'], el.type, 'Element'),
+  //         },
+  //         { key: 'complexItems', fn: () => object('complexItems', el.complexItems, 'Inherited') },
+  //         { key: 'locked', group: 'Security' },
+  //       ],
+  //       template: html`
+  //         <my-el><p>foo</p></my-el>
+  //       `,
+  //     }),
+  //   { notes: { markdown: notes } },
+  // )
+  .add('Alternative Header asdf', () => {
+    const el = document.createElement('div');
+    el.innerText = 'something';
+    return el;
+  })
   .add(
     'Alternative Header',
     () => html`
